@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/40eca73a21.js" crossorigin="anonymous"></script>
+    <title>GaBUS FAQs</title>
+  </head>
+  <body>
+    <!------------------Navigation-------------->
+   <section>
+    <nav class="nav">
+        <div class="logo">GaBUS</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="ticket.html">Buy Ticket</a></li>
+            <li><a href="faqs.html">FAQS</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+     </nav>
+   </section>
+    <!------------------End Navigation-------------->
+   <main>
+      <!-- website title -->
+      <section class="site-title-faqs">
+        <div class="site-background-faqs">
+            <h1><span>Frequently Asked Questions</h1>
+            <a href="#main-faqs">
+                <button class="main-btn-faqs">Check FAQs</button>
+            </a>
+        </div>
+    </section>
+    <!-- end website title -->
+     <!-- main faqs -->
+    <section id="main-faqs">
+      <div class="text-faqs">
+              <h1>FAQS</h1>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">Is it Accessible On Mobile?</div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Yes, By using browser like chromes and more.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">Can You Book Offline?</div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              No, you cannot book offline for the system wont work offline.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Does It Accept Debit Card, Credit Card And Pera Padala?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              As of now the system only accepts Gcash money transfer as payment.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">Can You Book In Advance?</div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Yes, you can book in advance for planed trips in the future.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">Can We Choose The Bus Company?</div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Yes, you can choose what bus company to book.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Is Cancellation Of Booking Is Considered?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              After confrimation of booking and payment, cancellation of booking
+              won't be available.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header">Can You Book In Advance?</div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Yes, you can book in advance for planned trips in the future.
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+       <!-- end main faqs -->
+       <div class="btn-faqs">
+         <a href="faqs.html">
+           <button class="faqs-btn">Go to Top</button>
+         </a>
+       </div>
+   </main>
+  <!---------- footer ---------->
+  <footer class="footer">
+    <div class="foot">
+        <img src="images/logo.png">
+        <h4>GABus <i class="far fa-copyright"></i> 2021</h4>
+        <p>Contact Us at GaBUS@gmail.com / Cebu City, Cebu, 6000</p>
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+    </div>		
+</footer>
+<!---------- end footer ---------->
+   <script>
+       const accordionItemHeaders = document.querySelectorAll(
+        '.accordion-item-header'
+      );
+      
+      accordionItemHeaders.forEach((accordionItemHeader) => {
+        accordionItemHeader.addEventListener('click', (event) => {
+         
+          accordionItemHeader.classList.toggle('active');
+          const accordionItemBody = accordionItemHeader.nextElementSibling;
+          if (accordionItemHeader.classList.contains('active')) {
+            accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + 'px';
+          } else {
+            accordionItemBody.style.maxHeight = 0;
+          }
+        });
+      });
+   </script>
+  </body>
+</html>

@@ -1,0 +1,1129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* --------transitions--------- */
+@keyframes transitionIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+/* -----------menu bar-------------- */
+nav{
+    height: 80px;
+    background: linear-gradient( #000, #ff6700);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px 0px 100px;
+}
+#click{
+    display: none;
+    position: fixed;
+}
+nav .logo{
+    font-size: 33px;
+    color: #ffd7b5;
+    font-weight: 600;
+    cursor: pointer;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+}
+nav ul li{
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #ffd7b5;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+nav ul li a:hover{
+    color: #fff;
+    background: rgb(63, 62, 62);
+}
+nav .menu-btn i{
+    color: #ffd7b5;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+/* -----------end menu bar-------------- */
+
+/* ------------start home page------------- */
+/* --------main site--------- */
+main{
+    animation: transitionIn 0.75s;
+}
+main .site-title{
+    background: url(images/road.jpg);
+    background-size: cover;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+}
+main .site-title .site-background{
+    padding-top: 13rem;
+    text-align: center;
+    color: #ffd7b5;
+}
+main .site-title h1,h3{
+    margin: 0.3rem;
+}
+main .site-title .main-btn{
+    margin: 1.8rem;
+    background:#ffd7b5;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+main .site-title .main-btn a{
+    text-decoration: none;
+    color: #000;
+}
+main .site-title .main-btn:hover{
+    color: #fff;
+    background: #000;
+}
+main .site-title h1{
+    font-size: 4rem;
+    color: #ff6700;
+    -webkit-text-stroke: 1px #ffd7b5;
+}
+main .site-title h3{
+    font-size: 1.8rem;
+    color: #fff;
+    -webkit-text-stroke: 1px #ffd7b5;
+}
+.site-title h4{
+    font-size: 25px;
+    margin-top: 10%;
+    color: #ffd7b5;
+    -webkit-text-stroke: 1px #000;
+}
+main .site-title .log-btn{
+    margin: 1.8rem;
+    background:#ffd7b5;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+main .site-title .log-btn:hover{
+    color: #fff;
+    background: #000;
+}
+/* -------------------------------end main site------------------------- */
+
+/* ------------home picture of buses------------- */
+main #buses{
+	width: 100%;
+	margin: auto;
+    padding-top: 20px;
+	text-align: center;
+    position: relative;
+    background: linear-gradient(#ff6700, #fff);
+}
+
+main #buses h1{
+	font-size: 36px;
+	font-weight: 600;
+}
+main #buses p{
+	color: #000;
+	font-size: 13px;
+	line-height: 22px;
+	padding: 0;
+	margin-bottom: 20px;
+}
+main #buses .bus-col p, .bus-col1 p{
+    color: #000;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 22px;
+	padding: 0;
+	margin-bottom: 20px;
+}
+main .row, main .row1{
+	display: flex;
+	justify-content: space-between;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+main .bus-col, main .bus-col1{
+	flex-basis: 30%;
+	background: #fff;
+	border-radius: 10px;
+	margin-bottom: 8px;
+	padding: 20px 12px;
+	box-sizing: border-box;
+	transition: 0.5s;
+}
+main .layer{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+main .bus-col h3, .bus-col1 h3{
+	text-align: center;
+	font-weight: 600;
+	margin: 10px 0;
+}
+main .bus-col:hover, main .bus-col1:hover{
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.5);
+	background: #ffd7b5;
+    cursor: pointer;
+}
+main .bus-col img, main .bus-col1 img{
+	width: 80%;
+}
+.book-to-ticket{
+    margin: 3% 0;
+}
+.book-to-ticket a{
+    margin: 1.8rem;
+    background:#ffd7b5;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.book-to-ticket a{
+    text-decoration: none;
+    color: #000;
+    
+}
+.book-to-ticket a:hover{
+    color: #fff;
+    background: #000;
+}
+/* ----------end picture of buses------------- */
+/* ----------end home page---------- */
+
+/* ------------------start about us------------------------ */
+main .site-title-about{
+    background: url(images/road.jpg);
+    background-size: cover;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+}
+main .site-title-about .site-background-about{
+    padding-top: 13rem;
+    text-align: center;
+    color: #ffd7b5;
+}
+main .site-title-about h1{
+    margin: 0.3rem;
+}
+main .site-title-about .main-btn-about{
+    margin: 1.8rem;
+    background:#ffd7b5;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+main .site-title-about .main-btn-about a{
+    text-decoration: none;
+    color: #000;
+}
+main .site-title-about .main-btn-about:hover{
+    color: #fff;
+    background: #000;
+}
+main .site-title-about h1{
+    font-size: 4rem;
+    color: #ff6700;
+    -webkit-text-stroke: 1px #ffd7b5;
+}
+main .site-title-about h3{
+    font-size: 1.8rem;
+    color: #ffd7b5;
+    -webkit-text-stroke: 1px #000;
+}
+#more-about{
+    background: linear-gradient(#ff6700, #fff);
+    height: 100vh;
+
+}
+.more-about-us h1{
+    text-align: center;
+    font-size: 4rem;
+    color: #000;
+    -webkit-text-stroke: 1px #ffd7b5;
+}
+.row-about-us{
+    text-align: center;
+}
+.row-about-us img{
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row-about-us p{
+    font-size: 15px;
+    max-width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.meet-btn{
+    margin: 1.8rem;
+    background:#ffd7b5;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.meet-btn:hover{
+    color: #fff;
+    background: #000;
+}
+    /* ---meet the team--- */
+    #meet-the-team{
+        height: 100vh;
+    }
+     .section-title{
+        display: block;
+        float: left;
+        width: 100%;
+        padding-bottom: 40px; 
+        margin-top: 5%;
+    }
+    .testimonials-carousel-wrap{
+        width: 90%;
+        position: relative;
+        text-align: center;
+        margin: 5% auto;
+    }
+    .section-title h2 {
+        float: left;
+        width: 100%;
+        text-align: center;
+        color: #ff9248;
+        font-size: 50px;
+        font-weight: 800;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .listing-carousel-button{
+        position: absolute;
+        top: 50%;
+        width: 80px;
+        height: 50px;
+        line-height: 50px;
+        margin-top: -25px;
+        z-index: 100;
+        cursor: pointer;
+        background: #ff4d04;
+        box-shadow: 0 9px 26px rgba(58, 87,135,0.45);
+        transition: all 200ms linear;
+        outline: none;
+    }
+    .listing-carousel-button.listing-carousel-button-next{
+        right: -30px;
+        padding-right: 20px;
+        border-radius: 60px 0 0 60px;
+    }
+    .listing-carousel-button.listing-carousel-button-prev{
+        left: -30px;
+        padding-left: 20px;
+        border-radius: 0 60px 60px 0;
+    }
+    .listing-carousel-button.listing-carousel-button-next:hover{
+        right: -15px;
+        background: rgba(6,27,65,0.4);
+    }
+    .listing-carousel-button.listing-carousel-button-prev:hover{
+        left: -15px;
+        background: rgba(6,27,65,0.4);
+    }
+    .testi-item {
+        transition: all .3s ease-in-out;
+        transform: scale(0.9);
+        opacity: 0.9;
+    }
+    .testimonials-text {
+        padding: 75px 50px 75px;
+        overflow:hidden;
+        background: #f5f6fa;
+        border:1ps solid #f1f1f1;
+        border-radius: 10px;
+        transition: all .3s ease-in-out;
+    }
+    .testimonials-text-after{
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        position: absolute;
+        color: #ccc;
+        opacity: .3;
+        font-size: 35px;
+        transition: all 400ms linear;
+        bottom: 25px;
+        right: 30px;
+    }
+    .testimonials-text-before{
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        position: absolute;
+        color: #ccc;
+        opacity: .3;
+        font-size: 35px;
+        transition: all 400ms linear;
+        top: 25px;
+        left: 30px;
+    }
+    .testimonials-text .listing-rating{
+        float: none;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+    .listing-rating i{
+        color: #007aff;
+    }
+    .testimonials-avatar h3{
+        font-weight: 600;
+        color: #7d93b2;
+        font-size: 18px;
+    }
+    .testimonials-avatar h4{
+         font-weight:400;
+         font-size:12px;
+         padding-top:6px;
+         color:#000;
+    }
+    .testimonials-carousel .swiper-slide{
+        padding: 30px 0;
+    }	 
+    .testi-avatar{
+        position: absolute;
+        left: 50%;
+        top: -30px;
+        width: 90px;
+        height: 90px;
+        margin-left: -45px;
+        z-index: 20;
+    }
+    .testi-avatar img{
+        width: 90px;
+        height: 90px;
+        float: left;
+        border-radius: 100%;
+        border:6px solid #fff;
+        box-shadow: 0 9px 26px rgba(58, 87,135,0.1);
+    }
+    .swiper-slide-active .testimonials-text {
+        background: #fff;
+        box-shadow: 0 9px 26px rgba(58, 87,135,0.1);
+    }
+    .testimonials-text p{
+        color: #878c9f;
+        font-size: 14px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-style: italic;
+        line-height: 24px;
+        padding-bottom: 10px;
+        font-weight: 500;
+    }
+    .text-link{
+        position: relative;
+        bottom:0;
+        padding: 15px 0;
+        border-radius: 10px 10px 0 0;
+        background: #f9f9f9;
+        border:1px solid #eee;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.03);
+        left: 50%;
+        width: 200px;
+        margin-left: -100px;
+    }
+    .swiper-slide-active .testi-item{
+        opacity: 1;
+        transform: scale(1.0);
+    }
+    .tc-pagination{
+        float: left;
+        margin-top: 10px;
+        width: 100% !important;
+    }
+    .tc-pagination_wrap {
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        width: 100%;
+    }
+    .tc-pagination2{
+        float: none;
+        display: inline-block;
+        padding: 14px 0;
+        background: #fff;
+        border-radius: 30px;
+        min-width: 250px;
+        border-bottom: 0;
+    }
+    .tc-pagination .swiper-pagination-bullet, .tc-pagination2.swiper-pagination-bullet{
+        opacity: 1;
+        background: #ff4d04;
+        margin:0 2px;
+        width: 10px;
+        height: 10px;
+        transition: all 300ms ease-in-out;
+    }
+    /* ---end meet the team--- */
+/* -----------end about us page ------------------*/
+
+/* ------------------start booking page------------------------ */
+main .site-title-ticket{
+    background: url(images/road.jpg);
+    background-size: cover;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+}
+main .site-title-ticket .site-background-ticket{
+    padding-top: 13rem;
+    text-align: center;
+    color: #ffd7b5;
+}
+main .site-title-bticket h1{
+    margin: 0.3rem;
+}
+main .site-title-ticket .main-btn-ticket{
+    margin: 1.8rem;
+    background:#ffd7b5;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+main .site-title-fticket .main-btn-ticket a{
+    text-decoration: none;
+    color: #000;
+}
+main .site-title-ticket .main-btn-ticket:hover{
+    color: #fff;
+    background: #000;
+}
+main .site-title-ticket h1{
+    font-size: 4rem;
+    color: #ffd7b5;
+    -webkit-text-stroke: 1px #000;
+}
+.book-form img{
+	width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.title-ticket h1{
+    font-size: 80px;
+	font-family: fantasy;
+	font-style: italic;
+	color: #ff6700;
+	text-align: center;
+    margin-top: 15%;
+	-webkit-text-stroke: 1px #ffd7b5;
+}
+.note h6{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 3%;
+}
+.book-box {
+    max-width: 700px;
+    margin: 0 auto 5%;
+}
+.book-form {
+    background-image: linear-gradient(#ff6700, #fff);
+    box-sizing: border-box;
+    border: 2px solid #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+.inst h1{
+    font-size: 80px;
+	font-family: fantasy;
+	font-style: italic;
+	color: #ff6700;
+	text-align: center;
+    margin-top: 5%;
+	-webkit-text-stroke: 1px #ffd7b5;
+}
+.book-instructions {
+	margin-top: 10px;
+    background-image: linear-gradient(#ff6700, #fff);
+    box-sizing: border-box;
+    border: 2px solid #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+.book-instructions {
+    max-width: 900px;
+    margin: auto;
+}
+.book-instructions h3{
+   font-size: 15px;
+}
+.book-now h3{
+	padding-top: 30px;
+}
+.book-now a{
+	margin: 1.8rem;
+    background:#ff6700;
+    border: none;
+    border-radius: 2rem;
+    padding: .5rem 1rem;
+    font-size: 0.8rem;
+    letter-spacing: .1rem;
+	color: #000;
+    cursor: pointer;
+	text-decoration: none;
+}
+.book-now a:hover{
+	background:#000;
+	color: #fff;
+}
+.btn-primary {
+    margin: 1.8rem;
+    background:#ff6700;
+    border: none;
+    border-radius: 2rem;
+    padding: .5rem 1rem;
+    font-size: 0.8rem;
+    letter-spacing: .1rem;
+	color: #fff;
+    cursor: pointer;
+	text-decoration: none;
+}
+.btn-primary:hover{
+    background:#000;
+	color: #fff;
+}
+label {
+    font-size: 20px;
+    font-weight: bolder;
+}
+.book-form h3{
+    font-size: 30px;
+}
+.book-form h5{
+    font-size: 20px;
+}
+.back-top{
+    text-align: center;
+}
+.back-top .back-top-btn{
+    margin: 1.8rem;
+    background:#ff6700;
+    border: none;
+    border-radius: 2rem;
+    padding: .5rem 1rem;
+    font-size: 0.8rem;
+    letter-spacing: .1rem;
+	color: #fff;
+    cursor: pointer;
+	text-decoration: none;
+}
+.back-top .back-top-btn:hover{
+    background:#000;
+	color: #fff;
+}
+  /* show north or south */
+.hidden {
+    display: none;
+}
+.show {
+    display: block;
+}
+  /*select*/
+.custom-select {
+    position: relative;
+}
+.custom-select select {
+    display: none; /*hide original SELECT element: */
+}
+#northcebudest {
+    display: none;
+}
+#northcebu {
+    display: none;
+}
+#southcebu {
+    display: none;
+}
+#southcebudest {
+    display: none;
+}
+#div3 {
+    display: none;
+}
+#div2 {
+    display: none;
+}
+/* -----------end booking page ------------------*/
+/* ---------------faqs-------------- */
+main .site-title-faqs{
+    background: url(images/road.jpg);
+    background-size: cover;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+}
+main .site-title-faqs .site-background-faqs{
+    padding-top: 13rem;
+    text-align: center;
+    color: #ffd7b5;
+}
+main .site-title-faqs h1,h3{
+    margin: 0.3rem;
+}
+main .site-title-faqs .main-btn-faqs{
+    margin: 1.8rem;
+    background:#ffd7b5;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+main .site-title-faqs .main-btn-faqs a{
+    text-decoration: none;
+    color: #000;
+}
+main .site-title-faqs .main-btn-faqs:hover{
+    color: #fff;
+    background: #000;
+}
+main .site-title-faqs h1{
+    font-size: 4rem;
+    color: #ffd7b5;
+    -webkit-text-stroke: 1px #000;
+}
+.text-faqs h1 {    
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+    color: #ff6700;
+    -webkit-text-stroke: 1px #ffd7b5;
+  }
+  .accordion {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+  }
+  .accordion-item {
+    background-color: #ffd7b5;
+    color: #111;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+  }
+  .accordion-item-header {
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  .accordion-item-header::after {
+    content: '\002B';
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+  }
+  .accordion-item-header.active::after {
+    content: '\2212';
+  }
+  .accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .accordion-item-body-content {
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+  }
+  .btn-faqs .faqs-btn{
+    margin: 1.8rem;
+    background:#ffd7b5;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-faqs .faqs-btn:hover{
+      color: #fff;
+      background: #000;
+  }
+  .btn-faqs .faqs-btn{
+      margin-bottom: 15%;
+  }
+  .btn-faqs{
+      text-align: center;
+  }
+/* ------------end faqs------------ */
+
+/* --------------------start feedback------------------------- */
+main .site-title-feed{
+    background: url(images/road.jpg);
+    background-size: cover;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+}
+main .site-title-feed .site-background-feed{
+    padding-top: 13rem;
+    text-align: center;
+    color: #ffd7b5;
+}
+main .site-title-feed h1{
+    margin: 0.3rem;
+}
+main .site-title-feed .main-btn-feed{
+    margin: 1.8rem;
+    background:#ffd7b5;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+main .site-title-feed .main-btn-feed a{
+    text-decoration: none;
+    color: #000;
+}
+main .site-title-feed .main-btn-feed:hover{
+    color: #fff;
+    background: #000;
+}
+main .site-title-feed h1{
+    font-size: 4rem;
+    color: #ff6700;
+    -webkit-text-stroke: 1px #ffd7b5;
+}
+main .site-title-feed h3{
+    font-size: 1.8rem;
+    color: #ffd7b5;
+    -webkit-text-stroke: 1px #000;
+}
+.rate-title h1{
+	margin-top: 10%;
+    font-size: 50px;
+    color: #ff9242;
+    -webkit-text-stroke: 1px #000;
+}
+#rate-us{
+    place-items: center;
+    text-align: center;
+    width: 100%;
+    position: relative;
+	margin-bottom: 10%;
+	margin-top: 10%;
+    height: 50vh;
+}
+.container-rating{
+    position: inherit;
+    width: 400px;
+    background: #111;
+    padding: 20px 30px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: inline-grid;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .container-rating .post{
+    display: none;
+  }
+  .container-rating .text{
+    font-size: 25px;
+    color: #666;
+    font-weight: 500;
+  }
+  .container-rating .edit{
+    position: inherit;
+    right: 10px;
+    top: 5px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .container-rating .edit:hover{
+    text-decoration: underline;
+  }
+  .container-rating .star-widget input{
+    display: none;
+  }
+  .star-widget label{
+    font-size: 40px;
+    color: #444;
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+  }
+  input:not(:checked) ~ label:hover,
+  input:not(:checked) ~ label:hover ~ label{
+    color: #ff4d04;
+  }
+  input:checked ~ label{
+    color: #ff4d04;
+  }
+  input #rate-5:checked ~ label{
+    color: #ff4d04;
+    text-shadow: 0 0 20px #952;
+  }
+  #rate-1:checked ~ form header:before{
+    content: "Very Unsatisfied ";
+  }
+  #rate-2:checked ~ form header:before{
+    content: "Unsatisfied ";
+  }
+  #rate-3:checked ~ form header:before{
+    content: "Neutral ";
+  }
+  #rate-4:checked ~ form header:before{
+    content: "Satisfied ";
+  }
+  #rate-5:checked ~ form header:before{
+    content: "Very Satisfied ";
+  }
+  .container-rating form{
+    display: none;
+  }
+  input:checked ~ form{
+    display: block;
+  }
+  form header{
+    width: 100%;
+    font-size: 25px;
+    color: #ff4d04;
+    font-weight: 500;
+    margin: 5px 0 20px 0;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  form .textarea{
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+  }
+  form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #eee;
+    border: 1px solid #333;
+    background: #222;
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+  }
+  .textarea textarea:focus{
+    border-color: #444;
+  }
+  form .btn{
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+  }
+  form .btn button{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #444;
+    outline: none;
+    background: #222;
+    color: #999;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  form .btn button:hover{
+    background: #1b1b1b;
+  }
+/* -------------------end feedback---------------------------- */
+
+
+  
+/* ------------end log in----------- */
+
+ /* ---------footer--------- */
+.footer{                           
+	width: 100%;
+	text-align: center;
+	padding: 3px 0;
+    background: linear-gradient(#ff6700, #000);
+    color: #ffd7b5;
+	position: absolute;
+}
+.footer h4{
+    font-size: 12px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	font-weight: 600px;
+}
+.footer p{
+    font-size: 8px;
+	font-weight: 300;
+}
+.icons .fab{
+	margin: 0 13px;
+	cursor: pointer;
+	padding: 18px 0;
+	-webkit-text-stroke: 0.5px #000;
+}
+.footer img{
+    width: 5%;
+    margin-top: 1%;
+}
+/* ---------end footer--------- */
+
+/* ---------responsive to size----------- */
+@media (max-width: 940px){
+    /* --- navbar ---- */
+    nav .menu-btn i{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background:#ff9248 ;
+        height: 30vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    #click:checked ~ ul{
+        left: 0%;
+        z-index: 2;
+    }
+    #click:checked ~ .menu-btn i:before{
+        content: "\f00d";
+    }
+    nav ul li{
+        margin: 20px 0;
+    }
+    nav ul li a{
+        font-size: 20px;
+        color: #000;
+    }
+    /* --- end navbar ---- */
+    /* ---buses pictures--- */
+    main .row, main .row1{
+        display: block;
+    }
+    main .bus-col img, main .bus-col1 img{
+        width: 50%;
+    }
+    main #buses p{
+        color: #000;
+        font-size: 10px;
+        line-height: 15px;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    /* ---end buses pictures--- */
+
+    /* ----about us----- */
+    .row-about-us{
+        display: block;
+        justify-content: space-between;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .row-about-us p{
+       font-size: 10px;
+    }
+    .meet-btn{
+        margin: 1.8rem;
+        background:#ffd7b5;
+        border: none;
+        border-radius: 2rem;
+        padding: 1rem 1rem;
+        font-size: .5rem;
+        letter-spacing: .1rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .meet-btn:hover{
+        color: #fff;
+        background: #000;
+    }
+    .more-about-us h1{
+        margin-top: 3%;
+        margin-bottom: 3%;
+        text-align: center;
+        font-size: 3rem;
+        color: #ff6700;
+        -webkit-text-stroke: 1px #ffd7b5;
+    }
+    .row-about-us img{
+        position: relative;
+    }
+    /* -------end about us--------- */
+
+	/*--------------faqs-----------  */
+	.text-faqs h1{
+		margin-top: -10%;
+	}
+	/* ---------end faqs----------- */
+
+	/* -------footer----------- */
+	
+	/* -------- end footer-------*/
+}
+/* ---------end media responsive to size----------- */

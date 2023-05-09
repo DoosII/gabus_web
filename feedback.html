@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- FIREBASE SYSTEM-->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <!-- Latest compiled and minified CSS -->
+  
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
+    <title>Feedback</title>
+  </head>
+  <body>
+    <!------------------Navigation-------------->
+   <section>
+    <nav class="nav">
+        <div class="logo">GaBUS</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="ticket.html">Buy Ticket</a></li>
+            <li><a href="faqs.html">FAQS</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+     </nav>
+   </section>
+    <!------------------End Navigation-------------->
+    <main>
+      <!-- website title -->
+      <section class="site-title-feed">
+        <div class="site-background-feed">
+            <h1>How's GaBUS?</h1>
+            <a href="#rate-us">
+                <button class="main-btn-feed">Rate Us</button>
+            </a>
+        </div>
+    </section>
+
+
+    <section id="rate-us">
+      <div class="container-rate">
+        <div class="rate-title">
+          <h1>Share Your Experience with Us</h1>
+        </div>
+        <div class="container-rating">
+          <div class="post">
+            <div class="text">Thanks for rating us!</div>
+          </div>
+          <div class="star-widget">
+            <input type="radio" name="rate" id="rate-5" value="Very Satisfied"/>
+            <label for="rate-5" class="fas fa-star" ></label>
+            <input type="radio" name="rate" id="rate-4" value="Satisfied"/>
+            <label for="rate-4" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-3" value="Neutral"/>
+            <label for="rate-3" class="fas fa-star" ></label>
+            <input type="radio" name="rate" id="rate-2" value="Unsatisfied"/>
+            <label for="rate-2" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate-1" value="Very Unsatisfied" />
+            <label for="rate-1" class="fas fa-star"></label>
+            <form action="#">
+              <header></header>
+              <div class="textarea">
+                <textarea
+                  id="ratingtext"
+                  cols="30"
+                  placeholder="Describe your experience.."
+                ></textarea>
+              </div>
+              <div class="btn">
+                <button onclick="submitrating()" type="submit">Post</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      </button>
+    </section>
+    </main>
+    <!---------- footer ---------->
+    <footer class="footer">
+      <div class="foot">
+          <img src="images/logo.png">
+          <h4>GABus <i class="far fa-copyright"></i> 2021</h4>
+          <p>Contact Us at GaBUS@gmail.com / Cebu City, Cebu, 6000</p>
+          <div class="icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter"></i>
+          </div>
+      </div>		
+</footer>
+  <!---------- end footer ---------->
+
+    <script>
+      const btn = document.querySelector('.btn');
+      const post = document.querySelector('.post');
+      const widget = document.querySelector('.star-widget');
+      const editBtn = document.querySelector('.edit');
+      btn.onclick = () => {
+        widget.style.display = 'none';
+        post.style.display = 'block';
+        editBtn.onclick = () => {
+          widget.style.display = 'block';
+          post.style.display = 'none';
+        };
+        return false;
+      };
+    </script>
+
+
+
+  </body>
+</html>

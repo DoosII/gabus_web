@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GaBUS Login Page</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+
+<!-- Optional theme -->
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous"> -->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+    <!-- STAFF LOGIN -->
+    <div class="wrapper">
+      <section class="s-wrapper flex-class">
+        <div class="content flex-class">
+          <div class="container flex-class">
+          
+              <p class="name">GaBUS STAFF LOGIN</p>
+              <div class="warning" id="login-warning"></div>
+              <input
+                type="email"
+                name="email"
+                id="login-email"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                id="login-password"
+                placeholder="Password"
+                required
+              />
+              <button id="login-button" onclick="login()">Log In</button>
+
+            <div class="forget-password">Forget Password?</div>
+          </div>
+          <div class="sub-container flex-class">
+            <p>
+              Don't have an account?<span id="signup-page-link">Sign Up</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- STAFF REGISTER / SIGNUP -->
+      <div class="wrapper">
+      </div>
+      <section class="s-wrapper flex-class">
+        <div class="content flex-class">
+          <div class="container flex-class">
+            <form action="/" method="GET"></form>
+            <p class="name">GaBUS Staff Register</p>
+            <div class="warning" id="signup-warning"></div>
+            <input
+              type="email"
+              name="email"
+              id="signup-email"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="text"
+              name="name"
+              id="signup-companyname"
+              placeholder="Company Name"
+              required
+            />
+            <input
+              type="text"
+              name="managername"
+              id="signup-managername"
+              placeholder="Name of Manager"
+              required
+            />
+            <input
+              type="text"
+              name="phonenumber"
+              id="signup-phonenumber"
+              placeholder="Company Phone Number"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              id="signup-password"
+              placeholder="Password"
+              required
+            />
+            <input
+              type="password"
+              name="confirmpassword"
+              id="signup-confirmpassword"
+              placeholder="Confirm Password"
+              required
+            />
+            <button
+              id="signup-button"
+              onclick="register()"
+              onsubmit="checkforblank()"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+          <div class="sub-container flex-class">
+            <p>Have an account?<span id="login-page-link">Log In</span></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- LOGOUT -->
+    <h1 class="title-ticket">TICKET UPDATES</h1>
+    <div class="container">
+      <table class="content-table">
+        <thead>
+          <th> #</th>
+          <th> Bus Liner </th>
+          <th> Date </th>
+          <th> Time </th>
+          <th> North Destination </th>
+          <th> North Origin </th>
+          <th> South Destination </th>
+          <th> South Origin </th>
+           
+          <th> Total Bill </th>
+          <th> Total km </th>
+        </thead>
+      <tbody id="tbody1">
+  
+      </tbody>
+  
+      </table>
+    </div>
+
+
+  
+
+
+
+
+    <script>
+
+    </script>
+
+
+
+
+
+    <div class="book-box">
+      <div class="book-form">
+        <button id="signout-button" class="btn btn-primary">Logout</button>
+      </div>
+    </div>
+          
+
+    <!-- END OF LOGOUT -->
+
+    <!-- FIREBASE SYSTEM-->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script></script>
+    <!-- END OF FIRE BASE -->
+    <script src="./firebase.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

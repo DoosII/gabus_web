@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GABus</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+    defer
+    src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyB08fRviLMvJ3vdLSTPqJZBKmdnV37VlfI"
+    type="text/javascript"
+  ></script>   
+    <script
+      src="https://kit.fontawesome.com/40eca73a21.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- FIREBASE SYSTEM-->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  
+
+<!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+  </head>
+
+
+
+  <body>
+   <!------------------Navigation-------------->
+   <section>
+    <nav class="nav">
+        <div class="logo">GaBUS</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="ticket.html">Buy Ticket</a></li>
+            <li><a href="faqs.html">FAQS</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+     </nav>
+   </section>
+    <!------------------End Navigation-------------->
+   <!-------------- main booking ---------------->
+   <main>
+     <!-- website title -->
+     <section class="site-title-ticket">
+      <div class="site-background-ticket">
+          <h1>Buying of Tickets and Guides</h1>
+          <a href="#instructions">
+              <button class="main-btn-ticket">Go to Guide</button>
+          </a>
+      </div>
+  </section>
+  <!-- end website title -->
+     <section id="instructions">
+       <div class="inst">
+        <h1>Guide</h1>
+      </div>
+       <div class="book-instructions">
+         <h2>How to book a ticket?</h2>
+          <h3>1.) Fill up all the information needed.(Bus Liner, Date, Time, Origin, Destination)</h3>
+          <h3>2.) After filling up the information, a certain amount will auto generate depending on the distance of your origin to your destination.</h3>
+          <h3>3.) After, click next to proceed to payment options.</h3>
+          <h3>4.) Once you are already in the payment options page, fill up the gcash name and account number of the bus liner you are going to ride. You can also scan the QR code to easily pay for the fare.</h3>
+          <h3>5.) After paying, don't forget to screenshot the gcash receipt because you will be needing this when you are already in the bus.</h3>
+          <h3>6.) After you are already done with step 5, click confirm, then a receipt from GaBUS will appear.</h3>
+          <h3>7.) Also, don't forget to screenshot the receipt you receive from GaBUS.</h3>
+          <h3>8.) You can now proceed inside the bus.</h3>
+         <h2>What to do when going inside the bus?</h2>
+          <h3>1.) When you are already done with the booking and the payment, you can now proceed to the bus liner in your ticket.</h3>
+          <h3>2.) Once you are in the bus, wait for the conductor to ask for payment, then that is the time that you will present your receipt from gcash and from GaBUS.</h3>
+          <h3>3.) Relax and Enjoy the ride.</h3>
+          <h2>Important Reminders:</h2>
+          <h3>- Always present two receipts to the driver or conductor. (Gcash receipt and GaBUS receipt)</h3>
+          <h3>- GaBUS receipt always has the logo of GaBUS on top of the summary of details.</h3>
+          <h3>- Your origin must match with your destination. This means that if your origin is from the north, then your destination must be on the north. You can't book your origin from south and destination to north.</h3>
+          <div class="book-now">
+            <h3>You are very ready to book a ticket now.</h3>
+            <a href="#title-ticket">Book Now</a>
+          </div>
+        </div>
+     </section>
+    <section id="title-ticket">
+        <div class="title-ticket">
+            <h1>Book Here</h1>
+        </div>
+        <div class="note">
+            <h6>Note: Always present your gcash receipt and GaBUS receipt to the driver or the conductor.</h6>
+        </div>
+    </section>
+    <div id="div1">
+        <div class="book-box">
+          <div class="book-form">
+            <div class="logo-ticket">
+              <img src="images/logo.png">
+            </div>
+            <label>Bus Liner:</label>
+            <div>
+              <select id="bus-liner" class="custom-select" >
+                <option>-Select Bus Liner-</option>
+                <option>Ceres Liners</option>
+                <option>Sunrays</option>
+                <option>Sugbo Transit</option>
+                <option>Librando</option>
+                <option>Mini Bus</option>
+              </select>
+            </div>
+            <label>Date Today:</label>
+            <div>
+              <input type="date" name="date" id="date"  />
+            </div>
+            <label>Current Time:</label>
+            <div>
+              <input type="time" name="time" id="time"  />
+            </div>
+            <label>Origin: </label>
+            <div>
+              <select name="origin-liner" id="origin-liner" class="origin-liner">
+                <option>-Select Origin-</option>
+                <option value="NorthCebu">North Cebu</option>
+                <option value="SouthCebu">South Cebu</option>
+              </select>
+            </div>
+            <div class="hidden" id="NorthOriginDetails">
+              <label>North Cebu: </label>
+              <select
+                id="north-origin"
+                class="custom-select"
+                onpointerleave="calculateDistance()"
+              >
+              <option value="0">-Select Travel Origin-</option>
+              <option value="North Bus Terminal, Mandaue City, Cebu">North Bus Terminal</option>
+              <optgroup label="Mandaue">
+                <option value="Subangdaku, Mandaue City, Cebu">Subangdaku</option>
+                <option value="Tipolo, Mandaue City, Cebu">Tipolo</option>
+                <option value="Banilad, Mandaue City, Cebu">Banilad</option>
+                <option value="Bakilid, Mandaue City, Cebu">Bakilid</option>
+                <option value="Casuntingan, Mandaue City, Ceb">Casuntingan</option>
+                <option value="Canduman Road, Mandaue City, Cebu">Canduman</option>
+                <option value="Mandaue City, Cebu ">Mandaue (Poblacion)</option>
+                <option value="Looc, Mandaue City, Cebu">Looc</option>
+                <option value="Cambaro, Mandaue, Cebu">Cambaro</option>
+                <option value="Opao, Mandaue City, Cebu">Opao</option>
+              </optgroup>
+              <optgroup label="Consolacion">
+                <option value="Casili, Cebu">Casili</option>
+                <option value="Poblacion Occidental, Cebu">Poblacion Occidental</option>
+                <option value="Cansaga, Cebu">Cansaga</option>
+                <option value="Pitogo, Cebu">Pitogo</option>
+                <option value="Jugan, Consolacion, Cebu">Jugan</option>
+                <option value="Tayud, Consolacion, Cebu">Tayud</option>
+                <option value="Tugbongan, Consolacion, Cebu">Tugbongan</option>
+              </optgroup>
+              <optgroup label="Liloan">
+                <option value="Yati, Liloan, Cebu">Yati</option>
+                <option value="Catarman, Liloan, Cebu">Catarman</option>
+                <option value="Calero, Cebu">Calero</option>
+                <option value="Jubay, Liloan, Cebu">Jubay</option>
+                <option value="Cotcot, Liloan, Cebu">Cotcot</option>
+              </optgroup>
+              <optgroup label="Compostela">
+                <option value="Estaca, Cebu">Estaca</option>
+                <option value="Poblacion, Compostela, Cebu">Poblacion</option>
+                <option value="Compostela, Compostela, Cebu">Compostela</option>
+                <option value="Cogon Compostela Cebu, Compostela, Cebu">Cogon</option>
+                <option value="Canamucan, Cebu">Canamucan</option>
+              </optgroup>
+              <optgroup label="Danao City">
+                <option value="Magay, Cebu">Magay</option>
+                <option value="Sabang, Danao City, Cebu">Sabang</option>
+                <option value="Looc, Danao City, Cebu">Looc</option>
+                <option value="Danao City, Cebu">Poblacion</option>
+                <option value="Cogon-Cruz, Danao City, Cebu">Cogon Cruz</option>
+                <option value="Guinacot, Danao City, Cebu">Guinacot</option>
+                <option value="Cambanay, Danao City, Cebu">Cambanay</option>
+                <option value="Guinsay, Danao City, Cebu">Guinsay</option>
+                <option value="Dunggoan, Danao City, Cebu">Dunggoan</option>
+              </optgroup>
+              <optgroup label="Carmen">
+                <option value="Dawis Norte, Carmen, Cebu">Dawis</option>
+                <option value="Carmen, Cebu">Carmen</option>
+                <option value="Cogon East, Carmen, Cebu">Cogon East/West</option>
+                <option value="Baring, Carmen, Cebu">Baring</option>
+                <option value="Luyang, Carmen, Cebu">Luyang</option>
+                <option value="Cantipay, Carmen, Cebu">Cantipay</option>
+              </optgroup>
+              <optgroup label="Catmon">
+                <option value="Binongkalan, Catmon, Cebu">Binongkalan</option>
+                <option value="Panalipan, Catmon, Cebu">Panalipan</option>
+                <option value="Catmondaan, Catmon, Cebu">Catmondaan</option>
+                <option value="Macaas, Catmon, Cebu">Macaas</option>
+                <option value="Flores, Catmon, Cebu">Flores</option>
+                <option value="San Jose, Catmon, Cebu">San Jose</option>
+              </optgroup>
+              <optgroup label="Sogod">
+                <option value="Poblacion, Sogod, Cebu">Poblacion</option>
+                <option value="Bagatayam, Sogod, Cebu">Bagatayam</option>
+                <option value="Damolog, Sogod, Cebu">Damolog</option>
+                <option value="Tabunok, Sogod, Cebu">Tabunok</option>
+                <option value="Calumboyan, Cebu">Calumboyan</option>
+              </optgroup>
+              <optgroup label="Borbon">
+                <option value="Campusong, Borbon, Cebu">Campusong</option>
+                <option Bingay, Borbon, Cebu>Bingay</option>
+                <option value="Poblacion, Borbon, Cebu">Poblacion</option>
+                <option value="Cadaruhan, Tabunan, Borbon, Cebu">Cadaruhan</option>
+                <option value="Borbon, Cebu">Law</option>
+                <option value="Tagnucan, Tabunan, Borbon, Cebu">Tagnucan</option>
+              </optgroup>
+              <optgroup label="Tabogon">
+                <option value="Ilihan, Tabunan, Tabogon, Cebu">Ilihan</option>
+                <option value="Caduawan, Tabogon, Cebu">Caduawan</option>
+                <option value="Libjo, Tabogon, Cebu">Libjo</option>
+                <option value="Muabog, Tabunan, Tabogon, Cebu">Muabog</option>
+                <option value="Daantabogon, Tabunan, Tabogon, Cebu">Daantabogon</option>
+                <option value="Maslog, Tabogon, Cebu">Maslog</option>
+                <option value="Poblacion, Tabogon, Cebu">Poblacion</option>
+                <option value="Manlagtang, Tabogon, Cebu">Manlagtang</option>
+              </optgroup>
+              <optgroup label="Bogo City">
+                <option value="Binabag, Bogo City, Cebu">Binabag</option>
+                <option value="Bogo City, Cebu">Bogo City</option>
+                <option value="Guadalupe, Lawis, Bogo City, Cebu">Guadalupe</option>
+                <option value="Dakit, Bogo City, Cebu ">Dakit</option>
+                <option value="Bungtod, Lawis, Bogo City, Cebu">Bungtod</option>
+                <option value="Cogon, Bogo City, Cebu ">Cogon</option>
+                <option value="Taytayan, Bogo City, Cebu ">Taytayan</option>
+                <option value="Lourdes, Lawis, Bogo City, Cebu ">Lourdes</option>
+                <option value="Polambato, Bogo City, Cebu ">Polambato</option>
+              </optgroup>
+              <optgroup label="Medellin">
+                <option value="Dayhagon, Medellin, Cebu ">Dayhagon</option>
+                <option value="Don Virgilio Gonzales, Medellin, Cebu ">Don Virgillo Gonzales</option>
+                <option value="Canhabagat, Poblacion, Medellin, Cebu">Canhabagat</option>
+                <option value="Curva, Medellin, Cebu ">Curva</option>
+                <option value="Panugnawan, Medellin, Cebu ">Panugnawan</option>
+                <option value="Caputatan Norte, Medellin, Cebu ">Caputatan Sur</option>
+                <option value="Poblacion, Medellin, Cebu ">Poblacion</option>
+                <option value="Daanlungsod, Medellin, Cebu ">DaanLungsod</option>
+                <option value="Antipolo, Medellin, Cebu ">Antipolo</option>
+                <option>Mahawak</option>
+              </optgroup>
+              <optgroup label="Daan Bantayan">
+                <option value="Bitoon, Daanbantayan, Cebu">Bitoon</option>
+                <option value="Tapilon, Daanbantayan, Cebu">Tapilon</option>
+                <option value="Maya, Daanbantayan, Cebu ">Maya</option>
+              </optgroup>
+              <optgroup label="San Remegio">
+                <option value="Hagnaya, San Remigio, Cebu">Hagnaya</option>
+                <option value="San Remigio, Cebu">San Remegio</option>
+                <option value="Looc, San Remigio, Cebu ">Looc San Remigio</option>
+                <option value="Maño, San Remigio, Cebu ">Maño</option>
+                <option value="Argawanon, San Remigio, Cebu ">Argawanon</option>
+                <option value="Dapdap, San Remigio, Cebu ">Dapdap</option>
+                <option value="Anapog, San Remigio, Cebu">Anapog</option>
+                <option value="To-ong, San Remigio, Cebu ">To-ong</option>
+                <option value="Tambongon, San Remigio, Cebu ">Tambongon</option>
+                <option Busogon, San Remigio, Cebu>Busogon</option>
+              </optgroup>
+              <optgroup label="Tabuelan">
+                <option value="Tigbawan, Tabuelan, Cebu ">Tigbayawan</option>
+                <option value="Tabunok, Tabuelan, Cebu ">Tabunok</option>
+                <option value="Tabuelan, Cebu">Tabuelan</option>
+              </optgroup>
+              <optgroup label="Tuburan">
+                <option value="Bagasawe, Cebu">Bagasawe</option>
+                <option value="Daan Lungsod, Poblacion, Tuburan, Cebu">Daang Lungsod</option>
+                <option value="Barangay I, Poblacion, Tuburan, Cebu">Barangay I</option>
+                <option value="Barangay II, Poblacion, Tuburan, Cebu">Barangay II</option>
+                <option value="Barangay III, Poblacion, Tuburan, Cebu">Barangay III</option>
+                <option value="Barangay IV, Poblacion, Tuburan, Cebu">Barangay IV</option>
+                <option value="Barangay V, Poblacion, Tuburan, Cebu">Barangay V</option>
+                <option value="Barangay VI, Poblacion, Tuburan, Cebu">Barangay VI</option>
+                <option value="Barangay VII, Poblacion, Tuburan, Cebu">Barangay VII</option>
+                <option value="Jagbuaya, Poblacion, Tuburan, Cebu">Jagbuaya</option>
+              </optgroup>
+              <optgroup label="Asturias">
+                <option value="New Bago, Asturias, Cebu">New Bago</option>
+                <option value="Barangay Sta. Lucia Rd, Asturias, Cebu">Sta. Lucia</option>
+                <option value="San Roque, Asturias, Cebu">San Roque</option>
+                <option value="Langub, Asturias, Cebu">Langub</option>
+                <option value="Looc Norte, Asturias, Cebu">Looc Norte</option>
+                <option value="Poblacion, Asturias, Cebu">Poblacion</option>
+                <option value="Owak, Asturias, Cebu">Owak</option>
+              </optgroup>
+              <optgroup label="Balamban">
+                <option value="Nangka, Balamban, Cebu">Nangka</option>
+                <option value="Cantuod, Balamban, Cebu">Cantuod</option>
+                <option value="Baliwagan, Balamban, Cebu">Baliwagan</option>
+                <option value="Aliwanay, Balamban, Cebu">Aliwanay</option>
+                <option value="Pondol, Balamban, Cebu">Pondol</option>
+                <option value="Abucayan, Balamban, Cebu">Abucayan</option>
+                <option value="Buanoy, Balamban, Cebu">Buanoy</option>
+                <option value="Arpili, Balamban, Cebu">Arpili</option>
+                <option value="Cansomoroy, Balamban, Cebu">Cansomoroy</option>
+              </optgroup>
+            </select>
+          </div>
+          <script>
+            $('.origin-liner').change(function () {
+              var responseID = $(this).val();
+              if (responseID == 'NorthCebu') {
+                $('#NorthOriginDetails').removeClass('hidden');
+                $('#NorthOriginDetails').addClass('show');
+              } else {
+                $('#NorthOriginDetails').removeClass('show');
+                $('#NorthOriginDetails').addClass('hidden');
+              }
+            });
+          </script>
+          <div class="hidden" id="SouthOriginDetails">
+            <label>South Cebu: </label>
+            <select
+              id="south-origin"
+              class="custom-select"
+              onpointerleave="calculateDistance()"
+            >
+              <option value="0">-Select Travel Origin-</option>
+              <option value="South Bus Terminal, Cebu City, Cebu">South Bus Terminal</option>
+              <optgroup label="Talisay">
+                <option value="bulacao talisay cebu">Bulacao</option>
+                <option value="Tabunok, Talisay, Cebu">Tabunok</option>
+                <option value="Lawaan, Talisay, Cebu ">Lawaan</option>
+                <option value="Mohon, Talisay, Cebu">Muhon</option>
+                <option value="Lipata, Talisay, Cebu">Linao-Lipata</option>
+              </optgroup>
+              <optgroup label="Minglanilla">
+                <option value="Sandayong, Minglanilla, Cebu">Sandayong</option>
+                <option value="Upper Linao, Minglanilla, Cebu">Linao</option>
+                <option value="Lipata, Minglanilla, Cebu ">Lipata</option>
+                <option value="Tungkil, Cebu">Tungkil</option>
+                <option value="Pakigne, Minglanilla, Cebu">Pakigne</option>
+                <option value="Calajo-an, Minglanilla, Cebu">Calajo-an</option>
+                <option value="Calajo-an, Minglanilla, Cebu">Sangi</option>
+              </optgroup>
+              <optgroup label="Naga">
+                <option value="Tuyan Aaga">Tuyan</option>
+                <option value="Colon Naga">Colon</option>
+                <option value="Inayagan, City of Naga, Cebu">Inayagan</option>
+                <option value="Poblacion, Naga, Cebu">Naga (Poblacion)</option>
+                <option value="East Poblacion, City of Naga, Cebu">East Poblacion</option>
+                <option value="Tina-an, Naga, Cebu">Tinaan</option>
+                <option value="Inoburan, Naga, Cebu">Inoburan</option>
+                <option value="langtad City of Naga, Cebu">Langtad</option>
+                <option value="Naalad, City of Naga, Cebu">Naalad</option>
+                <option value="Lutac, City of Naga, Cebu">Lutac</option>
+                <option value="Balirong, City of Naga, Cebu">Balirong</option>
+                <option value="Uling - Naga Road, City of Naga, Cebu">Uling</option>
+              </optgroup>
+              <optgroup label="Toledo">
+                <option value="Toledo, Mainit">Mainit</option>
+                <option value="Pangdan, Toledo, Cebu">Pangdan</option>
+              </optgroup>
+              <optgroup label="San Fernando">
+                <option value="Pitalo, San Fernando, Cebu">Pitalo</option>
+                <option value="North Poblacion, San Fernando, Cebu">North Poblacion</option>
+                <option value="Pitalo, San Fernando, Cebu">Poblacion</option>
+                <option value="Sangat San Fernando Cebu">Sangat</option>
+                <option value="Balud, San Fernando, Cebu">Balud</option>
+              </optgroup>
+              <optgroup label="Carcar City">
+                <option value="Perrelos, Carcar City, Cebu">Perrelos</option>
+                <option value="Poblacion, Carcar City, Cebu">Poblacion</option>
+              </optgroup>
+              <optgroup label="Carcar City to Sibonga">
+                <option value="Bolinawan, Carcar City, Cebu">Bolinawan</option>
+                <option value="Ocaña, Carcar City, Cebu">Ocaña</option>
+              </optgroup>
+              <optgroup label="Sibonga">
+                <option value="Abugon, Sibonga, Cebu">Abugon</option>
+                <option value="Candaguit, Sibonga, Cebu">Candaguit</option>
+                <option value="Sabang, Cebu">Sabang</option>
+                <option value="Sibonga, Sibonga, Cebu">Poblacion</option>
+                <option value="Brgy Bagacay Road, Sibonga, Cebu">Bagacay</option>
+                <option value="Simala, Cebu">Simala</option>
+                <option value="Pungtod Sibonga, Cebu">Pungtod</option>
+              </optgroup>
+              <optgroup label="Argao">
+                <option value="Guiwanon , Argao, Cebu">Guiwanon</option>
+                <option value="TTaloot - Loon, Argao, Cebu">Taloot</option>
+                <option value="Bulasa, Argao, Cebu">Bulasa</option>
+                <option value="Binlod, Argao, Cebu">Binlod</option>
+                <option value="Langtad, Argao, Cebu">Langtad</option>
+                <option value="Poblacion, Argao, Cebu">Poblacion</option>
+                <option value="Tulic, Argao, Cebu">Tulic</option>
+                <option value="Bogo, Argao, Cebu">Bogo</option>
+                <option value="Talaga, Argao, Cebu">Talaga</option>
+                <option value="Balisong, Argao, Cebu">Balisong</option>
+                <option value="Casay Argao, Cabu">Casay</option>
+              </optgroup>
+              <optgroup label="Dalaguete">
+                <option value="Casay, Dalaguete, Cebu">Casay</option>
+                <option value="Cawayan, Dalaguete, Cebu">Cawayan</option>
+                <option value="Banhigan, Dalaguete, Cebu">Banhigan</option>
+                <option value="Coro, Dalaguete">Coro</option>
+                <option value="Tapon, Dalaguete, Cebu">Tapun</option>
+                <option value="Dalaguete, Cebu">Poblacion</option>
+                <option value="Balud, Poblacion, Dalaguete">Balud</option>
+                <option value="Consolacion , Dalaguete, Cebu">Consolacion</option>
+                <option value="Obong, Dalaguete, Cebu">Obong</option>
+              </optgroup>
+              <optgroup label="Alcoy">
+                <option value="Pugalo, Alcoy, Cebu">Pugalo</option>
+                <option value="Pasol, Alcoy, Cebu">Pasol</option>
+                <option value="Alcoy, Alcoy, Cebu">Poblacion</option>
+                <option value="Atabay, Alcoy, Cebu">Atabay</option>
+                <option value="Guiwang, Alcoy, Cebu">Guiwang</option>
+                <option value="Daan Lungsod, Alcoy, Cebu">Daan Lungsod</option>
+              </optgroup>
+              <optgroup label="Boljoon">
+                <option value="El Pardo, Boljoon, Cebu">El Pardo</option>
+                <option value="Arbor, Boljoon, Cebu">Arbor</option>
+                <option value="Boljoon, Boljoon, Cebu">Poblacion</option>
+                <option value="Granada, Boljoon, Cebu">Granada</option>
+              </optgroup>
+              <optgroup label="Oslob">
+                <option value="Gawi, Cebu">Gawi</option>
+                <option value="Pungtod, Cebu">Pungtod</option>
+                <option value="Nueva Caceres, Oslob, Cebu">Nueva Caceres</option>
+                <option value="Bonbon, Cebu">Bonbon</option>
+                <option value="Looc, Oslob, Cebu">Looc</option>
+                <option value="Lagundi, Oslob, Cebu">Lagundi</option>
+                <option value="Oslob, Oslob, Cebu">Poblacion</option>
+                <option value="Daan Lungsod, Oslob, Cebu">Daang Lungsod</option>
+                <option value="Calumpang, Cebu">Calimpang</option>
+                <option value="Hagdan, Oslob, Cebu">Hagdan</option>
+                <option value="">Alo</option>
+                <option value="Luka, Oslob, Cebu">Luka</option>
+                <option value="Tan-Awan Cangcuay Beach, Oslob, Cebu">Cancuaay</option>
+                <option value="Tan-Awan Cangcuay Beach, Oslob, Cebu">Tan-awan</option>
+                <option value="Bangkugon Oslob, Cebu">Bangkugon</option>
+                <option value="Bangkugon Oslob, Cebu">Mainit</option>
+              </optgroup>
+              <optgroup label="Santander">
+                <option value="Liloan, Santander, Cebu">Liloan</option>
+                <option value="Bato, Santander, Cebu">Bato</option>
+                <option value="Canlumacad, Santander, Cebu">Canlumacad</option>
+                <option value="Colase, Samboan, Cebu">Colase</option>
+                <option value="Dalahikan, Samboan, Cebu">Dalahikan</option>
+                <option value="Tangbo, Samboan, Cebu">Tangbo</option>
+                <option value="Bobon, Santander, Cebu">Bonbon</option>
+                <option value="Poblacion, Santander, Cebu">Poblacion</option>
+                <option value="Suba, Santander, Cebu">Suba</option>
+              </optgroup>
+              <optgroup label="Carcar City to Barili">
+                <option value="Guadalupe, Carcar City, Cebu">Guadalupe</option>
+                <option value="Tan.awan Carcar, Carcar City, Cebu">Tan-awan</option>
+                <option value="Mantalongon, Dalaguete, Cebu">Mantalongon</option>
+              </optgroup>
+              <optgroup label="Barili">
+                <option value="Tubod, Barili, Cebu">Tubod</option>
+                <option value="Giloctog, Barili, Cebu">Giloctog</option>
+                <option value="Patupat, Barili, Cebu">Patupat</option>
+                <option value="Azucena, Carcar, Cebu ">Azucena</option>
+                <option value="Santa Ana , Carcar - Barili Road, Barili, Cebu">Santa Ana</option>
+                <option value="Poblacion, Barili, Cebu">Poblacion</option>
+                <option value="Guibuangan, Barili, Cebu">Guibuangan</option>
+                <option value="Sayaw, Barili, Cebu">Sayaw</option>
+                <option value="Minolos, Barili, Cebu">Minolos</option>
+                <option value="Giawanon Barili, Cebu">Giawanon</option>
+              </optgroup>
+              <optgroup label="Dumanjug">
+                <option value="Bitoon, Dumanjug, Cebu">Bitoon</option>
+                <option value="Tangil, Dumanjug, Cebu">Tangil</option>
+                <option value="Tapon, Dumanjug, Cebu">Tapon</option>
+                <option value="Poblacion, Dumanjug, Cebu">Poblacion</option>
+              </optgroup>
+              <optgroup label="Ronda">
+                <option value="Atabay, Ronda, Cebu">Atabay</option>
+                <option value="Santa Cruz Road, Ronda, Cebu">Santa Cruz</option>
+                <option value="Canduling, Ronda, Cebu">Canduling</option>
+                <option value="Poblacion, Ronda, Cebu">Poblacion</option>
+              </optgroup>
+              <optgroup label="Alcantara">
+                <option value="Palanas, Alcantara, Cebu">Palanas</option>
+                <option value="Poblacion, Alcantara, Cebu">Poblacion</option>
+              </optgroup>
+              <optgroup label="Moalboal">
+                <option value="Tunga, Moalboal, Cebu">Tunga</option>
+                <option value="Poblacion East, Moalboal, Cebu">Poblacion East</option>
+                <option value="Poblacion West, Moalboal, Cebu">Poblacion West</option>
+                <option value="Tomonoy, Moalboal, Cebu">Tomonoy</option>
+                <option value="Balabagon, Moalboal, Cebu">Balabagon</option>
+                <option value="Bugas, Moalboal, Cebu">Bugas</option>
+              </optgroup>
+              <optgroup label="Badian">
+                <option value="Malihao, Santander - Barili - Toledo Road, Badian, Cebu">Malihao</option>
+                <option value="Pantalan, Badian, Cebu">Pantalan</option>
+                <option value="Poblacion, Badian, Cebu">Poblacion</option>
+                <option value="Banhigan, Badian, Cebu">Banhigan</option>
+                <option value="Kawasan, Badian, Cebu">Kawasan</option>
+                <option value="Matutinao, Badian, Cebu">Matutinao</option>
+              </optgroup>
+              <optgroup label="Alegria">
+                <option value="Madridejos, Alegría, Cebu">Madridejos</option>
+                <option value="Sta. Filomena, Alegría, Cebu">Sta. Filomena</option>
+                <option value="Alegria, Cebu">Poblacion</option>
+                <option value="Legaspi, Alegría, Cebu">Legaspi</option>
+              </optgroup>
+              <optgroup label="Malabuyoc">
+                <option value="Montaneza, Malabuyoc, Santander - Barili - Toledo Road, Malabuyoc, Cebu">Montañeza</option>
+                <option value="Malabuyoc, Santander - Barili - Toledo Road, Malabuyoc, Cebu ">Poblacion</option>
+              </optgroup>
+              <optgroup label="Ginatilan">
+                <option value="Lo-oc, Ginatilan, Cebu">Lo-oc</option>
+                <option value="Lutak, Ginatilan, Cebu">Lutak</option>
+                <option value="Ginatilan, Cebu">Poblacion</option>
+              </optgroup>
+              <optgroup label="Samboan">
+                <option value="Ponong, Samboan, Cebu">Ponong</option>
+                <option value="Samboan, Cebu">Poblacion</option>
+                <option value="Bato, Samboan, Cebu">Bato</option>
+              </optgroup>
+            </select>
+          </div>
+          <script>
+            $('.origin-liner').change(function () {
+              var responseID = $(this).val();
+              if (responseID == 'SouthCebu') {
+                $('#SouthOriginDetails').removeClass('hidden');
+                $('#SouthOriginDetails').addClass('show');
+              } else {
+                $('#SouthOriginDetails').removeClass('show');
+                $('#SouthOriginDetails').addClass('hidden');
+              }
+            });
+          </script>
+          <label>Destination: </label>
+          <div>
+            <select
+              name="destination-liner"
+              id="destination-liner"
+              class="destination-liner"
+              onpointerleave="calculateDistance()"
+            >
+              <option>-Select Destination-</option>
+              <option value="NorthCebu">North Cebu</option>
+              <option value="SouthCebu">South Cebu</option>
+            </select>
+          </div>
+          <div class="hidden" id="NorthDestinationDetails">
+            <label>North Cebu: </label>
+            <select
+              id="north-destination"
+              class="custom-select"
+              onpointerleave="calculateDistance()"
+            >
+              <option value="0">-Select Travel Destination-</option>
+              <optgroup label="Mandaue">
+                <option value="Subangdaku, Mandaue City, Cebu">Subangdaku</option>
+                <option id="Dest1.2" value="Tipolo, Mandaue City, Cebu">Tipolo</option>
+                <option value="Banilad, Mandaue City, Cebu">Banilad</option>
+                <option value="Bakilid, Mandaue City, Cebu">Bakilid</option>
+                <option value="Casuntingan, Mandaue City, Ceb">Casuntingan</option>
+                <option value="Canduman Road, Mandaue City, Cebu">Canduman</option>
+                <option value="Mandaue City, Cebu ">Mandaue (Poblacion)</option>
+                <option value="Looc, Mandaue City, Cebu">Looc</option>
+                <option value="Cambaro, Mandaue, Cebu">Cambaro</option>
+                <option value="Opao, Mandaue City, Cebu">Opao</option>
+              </optgroup>
+              <optgroup label="Consolacion">
+                <option value="Casili, Cebu">Casili</option>
+                <option value="Poblacion Occidental, Cebu">Poblacion Occidental</option>
+                <option value="Cansaga, Cebu">Cansaga</option>
+                <option value="Pitogo, Cebu">Pitogo</option>
+                <option value="Jugan, Consolacion, Cebu">Jugan</option>
+                <option value="Tayud, Consolacion, Cebu">Tayud</option>
+                <option value="Tugbongan, Consolacion, Cebu">Tugbongan</option>
+              </optgroup>
+              <optgroup label="Liloan">
+                <option value="Yati, Liloan, Cebu">Yati</option>
+                <option value="Catarman, Liloan, Cebu">Catarman</option>
+                <option value="Calero, Cebu">Calero</option>
+                <option value="Jubay, Liloan, Cebu">Jubay</option>
+                <option value="Cotcot, Liloan, Cebu">Cotcot</option>
+              </optgroup>
+              <optgroup label="Compostella">
+                <option value="Estaca, Cebu">Estaca</option>
+                <option value="Poblacion, Compostela, Cebu">Poblacion</option>
+                <option value="Compostela, Compostela, Cebu">Compostela</option>
+                <option value="Cogon Compostela Cebu, Compostela, Cebu">Cogon</option>
+                <option value="Canamucan, Cebu">Canamucan</option>
+              </optgroup>
+              <optgroup label="Danao City">
+                <option value="Magay, Cebu">Magay</option>
+                <option value="Sabang, Danao City, Cebu">Sabang</option>
+                <option value="Looc, Danao City, Cebu">Looc</option>
+                <option value="Danao City, Cebu">Poblacion</option>
+                <option value="Cogon-Cruz, Danao City, Cebu">Cogon Cruz</option>
+                <option value="Guinacot, Danao City, Cebu">Guinacot</option>
+                <option value="Cambanay, Danao City, Cebu">Cambanay</option>
+                <option value="Guinsay, Danao City, Cebu">Guinsay</option>
+                <option value="Dunggoan, Danao City, Cebu">Dunggoan</option>
+              </optgroup>
+              <optgroup label="Carmen">
+                <option value="Dawis Norte, Carmen, Cebu">Dawis</option>
+                <option value="Carmen, Cebu">Carmen</option>
+                <option value="Cogon East, Carmen, Cebu">Cogon East/West</option>
+                <option value="Baring, Carmen, Cebu">Baring</option>
+                <option value="Luyang, Carmen, Cebu">Luyang</option>
+                <option value="Cantipay, Carmen, Cebu">Cantipay</option>
+              </optgroup>
+              <optgroup label="Catmon">
+                <option value="Binongkalan, Catmon, Cebu">Binongkalan</option>
+                <option value="Panalipan, Catmon, Cebu">Panalipan</option>
+                <option value="Catmondaan, Catmon, Cebu">Catmondaan</option>
+                <option value="Macaas, Catmon, Cebu">Macaas</option>
+                <option value="Flores, Catmon, Cebu">Flores</option>
+                <option value="San Jose, Catmon, Cebu">San Jose</option>
+              </optgroup>
+              <optgroup label="Sogod">
+                <option value="Poblacion, Sogod, Cebu">Poblacion</option>
+                <option value="Bagatayam, Sogod, Cebu">Bagatayam</option>
+                <option value="Damolog, Sogod, Cebu">Damolog</option>
+                <option value="Tabunok, Sogod, Cebu">Tabunok</option>
+                <option value="Calumboyan, Cebu">Calumboyan</option>
+              </optgroup>
+              <optgroup label="Borbon">
+                <option value="Campusong, Borbon, Cebu">Campusong</option>
+                <option Bingay, Borbon, Cebu>Bingay</option>
+                <option value="Poblacion, Borbon, Cebu">Poblacion</option>
+                <option value="Cadaruhan, Tabunan, Borbon, Cebu">Cadaruhan</option>
+                <option value="Borbon, Cebu">Law</option>
+                <option value="Tagnucan, Tabunan, Borbon, Cebu">Tagnucan</option>
+              </optgroup>
+              <optgroup label="Tabogon">
+                <option value="Ilihan, Tabunan, Tabogon, Cebu">Ilihan</option>
+                <option value="Caduawan, Tabogon, Cebu">Caduawan</option>
+                <option value="Libjo, Tabogon, Cebu">Libjo</option>
+                <option value="Muabog, Tabunan, Tabogon, Cebu">Muabog</option>
+                <option value="Daantabogon, Tabunan, Tabogon, Cebu">Daantabogon</option>
+                <option value="Maslog, Tabogon, Cebu">Maslog</option>
+                <option value="Poblacion, Tabogon, Cebu">Poblacion</option>
+                <option value="Manlagtang, Tabogon, Cebu">Manlagtang</option>
+              </optgroup>
+              <optgroup label="Bogo City">
+                <option value="Binabag, Bogo City, Cebu">Binabag</option>
+                <option value="Bogo City, Cebu">Bogo City</option>
+                <option value="Guadalupe, Lawis, Bogo City, Cebu">Guadalupe</option>
+                <option value="Dakit, Bogo City, Cebu ">Dakit</option>
+                <option value="Bungtod, Lawis, Bogo City, Cebu">Bungtod</option>
+                <option value="Cogon, Bogo City, Cebu ">Cogon</option>
+                <option value="Taytayan, Bogo City, Cebu ">Taytayan</option>
+                <option value="Lourdes, Lawis, Bogo City, Cebu ">Lourdes</option>
+                <option value="Polambato, Bogo City, Cebu ">Polambato</option>
+              </optgroup>
+              <optgroup label="Medellin">
+                <option value="Dayhagon, Medellin, Cebu ">Dayhagon</option>
+                <option value="Don Virgilio Gonzales, Medellin, Cebu ">Don Virgillo Gonzales</option>
+                <option value="Canhabagat, Poblacion, Medellin, Cebu">Canhabagat</option>
+                <option value="Curva, Medellin, Cebu ">Curva</option>
+                <option value="Panugnawan, Medellin, Cebu ">Panugnawan</option>
+                <option value="Caputatan Norte, Medellin, Cebu ">Caputatan Sur</option>
+                <option value="Poblacion, Medellin, Cebu ">Poblacion</option>
+                <option value="Daanlungsod, Medellin, Cebu ">DaanLungsod</option>
+                <option value="Antipolo, Medellin, Cebu ">Antipolo</option>
+                <option>Mahawak</option>
+              </optgroup>
+              <optgroup label="Daan Bantayan">
+                <option value="Bitoon, Daanbantayan, Cebu">Bitoon</option>
+                <option value="Tapilon, Daanbantayan, Cebu">Tapilon</option>
+                <option value="Maya, Daanbantayan, Cebu ">Maya</option>
+              </optgroup>
+              <optgroup label="San Remegio">
+                <option value="Hagnaya, San Remigio, Cebu">Hagnaya</option>
+                <option value="San Remigio, Cebu">San Remegio</option>
+                <option value="Looc, San Remigio, Cebu ">Looc San Remigio</option>
+                <option value="Maño, San Remigio, Cebu ">Maño</option>
+                <option value="Argawanon, San Remigio, Cebu ">Argawanon</option>
+                <option value="Dapdap, San Remigio, Cebu ">Dapdap</option>
+                <option value="Anapog, San Remigio, Cebu">Anapog</option>
+                <option value="To-ong, San Remigio, Cebu ">To-ong</option>
+                <option value="Tambongon, San Remigio, Cebu ">Tambongon</option>
+                <option Busogon, San Remigio, Cebu>Busogon</option>
+              </optgroup>
+              <optgroup label="Tabuelan">
+                <option value="Tigbawan, Tabuelan, Cebu ">Tigbayawan</option>
+                <option value="Tabunok, Tabuelan, Cebu ">Tabunok</option>
+                <option value="Tabuelan, Cebu">Tabuelan</option>
+              </optgroup>
+              <optgroup label="Tuburan">
+                <option value="Bagasawe, Cebu">Bagasawe</option>
+                <option value="Daan Lungsod, Poblacion, Tuburan, Cebu">Daang Lungsod</option>
+                <option value="Barangay I, Poblacion, Tuburan, Cebu">Barangay I</option>
+                <option value="Barangay II, Poblacion, Tuburan, Cebu">Barangay II</option>
+                <option value="Barangay III, Poblacion, Tuburan, Cebu">Barangay III</option>
+                <option value="Barangay IV, Poblacion, Tuburan, Cebu">Barangay IV</option>
+                <option value="Barangay V, Poblacion, Tuburan, Cebu">Barangay V</option>
+                <option value="Barangay VI, Poblacion, Tuburan, Cebu">Barangay VI</option>
+                <option value="Barangay VII, Poblacion, Tuburan, Cebu">Barangay VII</option>
+                <option value="Jagbuaya, Poblacion, Tuburan, Cebu">Jagbuaya</option>
+              </optgroup>
+              <optgroup label="Asturias">
+                <option value="New Bago, Asturias, Cebu">New Bago</option>
+                <option value="Barangay Sta. Lucia Rd, Asturias, Cebu">Sta. Lucia</option>
+                <option value="San Roque, Asturias, Cebu">San Roque</option>
+                <option value="Langub, Asturias, Cebu">Langub</option>
+                <option value="Looc Norte, Asturias, Cebu">Looc Norte</option>
+                <option value="Poblacion, Asturias, Cebu">Poblacion</option>
+                <option value="Owak, Asturias, Cebu">Owak</option>
+              </optgroup>
+              <optgroup label="Balamban">
+                <option value="Nangka, Balamban, Cebu">Nangka</option>
+                <option value="Cantuod, Balamban, Cebu">Cantuod</option>
+                <option value="Baliwagan, Balamban, Cebu">Baliwagan</option>
+                <option value="Aliwanay, Balamban, Cebu">Aliwanay</option>
+                <option value="Pondol, Balamban, Cebu">Pondol</option>
+                <option value="Abucayan, Balamban, Cebu">Abucayan</option>
+                <option value="Buanoy, Balamban, Cebu">Buanoy</option>
+                <option value="Arpili, Balamban, Cebu">Arpili</option>
+                <option value="Cansomoroy, Balamban, Cebu">Cansomoroy</option>
+              </optgroup>
+            </select>
+          </div>
+          <script>
+            $('.destination-liner').change(function () {
+              var responseID = $(this).val();
+              if (responseID == 'NorthCebu') {
+                $('#NorthDestinationDetails').removeClass('hidden');
+                $('#NorthDestinationDetails').addClass('show');
+              } else {
+                $('#NorthDestinationDetails').removeClass('show');
+                $('#NorthDestinationDetails').addClass('hidden');
+              }
+            });
+          </script>
+          <div class="hidden" id="SouthDestinationDetails">
+            <label>South Cebu: </label>
+            <select
+              id="south-destination"
+              class="custom-select"
+              onpointerleave="calculateDistance()"
+            >
+              <option value="0">-Select Travel Destination-</option>
+              <optgroup label="Talisay">
+                <option value="bulacao talisay cebu">Bulacao</option>
+                <option value="Tabunok, Talisay, Cebu">Tabunok</option>
+                <option value="Lawaan, Talisay, Cebu ">Lawaan</option>
+                <option value="Mohon, Talisay, Cebu">Muhon</option>
+                <option value="Lipata, Talisay, Cebu">Linao-Lipata</option>
+              </optgroup>
+              <optgroup label="Minglanilla">
+                <option value="Sandayong, Minglanilla, Cebu">Sandayong</option>
+                <option value="Upper Linao, Minglanilla, Cebu">Linao</option>
+                <option value="Lipata, Minglanilla, Cebu ">Lipata</option>
+                <option value="Tungkil, Cebu">Tungkil</option>
+                <option value="Pakigne, Minglanilla, Cebu">Pakigne</option>
+                <option value="Calajo-an, Minglanilla, Cebu">Calajo-an</option>
+                <option value="Calajo-an, Minglanilla, Cebu">Sangi</option>
+              </optgroup>
+              <optgroup label="Naga">
+                <option value="Tuyan Aaga">Tuyan</option>
+                <option value="Colon Naga">Colon</option>
+                <option value="Inayagan, City of Naga, Cebu">Inayagan</option>
+                <option value="Poblacion, Naga, Cebu">Naga (Poblacion)</option>
+                <option value="East Poblacion, City of Naga, Cebu">East Poblacion</option>
+                <option value="Tina-an, Naga, Cebu">Tinaan</option>
+                <option value="Inoburan, Naga, Cebu">Inoburan</option>
+                <option value="langtad City of Naga, Cebu">Langtad</option>
+                <option value="Naalad, City of Naga, Cebu">Naalad</option>
+                <option value="Lutac, City of Naga, Cebu">Lutac</option>
+                <option value="Balirong, City of Naga, Cebu">Balirong</option>
+                <option value="Uling - Naga Road, City of Naga, Cebu">Uling</option>
+              </optgroup>
+              <optgroup label="Toledo">
+                <option value="Toledo, Mainit">Mainit</option>
+                <option value="Pangdan, Toledo, Cebu">Pangdan</option>
+              </optgroup>
+              <optgroup label="San Fernando">
+                <option value="Pitalo, San Fernando, Cebu">Pitalo</option>
+                <option value="North Poblacion, San Fernando, Cebu">North Poblacion</option>
+                <option value="Pitalo, San Fernando, Cebu">Poblacion</option>
+                <option value="Sangat San Fernando Cebu">Sangat</option>
+                <option value="Balud, San Fernando, Cebu">Balud</option>
+              </optgroup>
+              <optgroup label="Carcar City">
+                <option value="Perrelos, Carcar City, Cebu">Perrelos</option>
+                <option value="Poblacion, Carcar City, Cebu">Poblacion</option>
+              </optgroup>
+              <optgroup label="Carcar City to Sibonga">
+                <option value="Bolinawan, Carcar City, Cebu">Bolinawan</option>
+                <option value="Ocaña, Carcar City, Cebu">Ocaña</option>
+              </optgroup>
+              <optgroup label="Sibonga">
+                <option value="Abugon, Sibonga, Cebu">Abugon</option>
+                <option value="Candaguit, Sibonga, Cebu">Candaguit</option>
+                <option value="Sabang, Cebu">Sabang</option>
+                <option value="Sibonga, Sibonga, Cebu">Poblacion</option>
+                <option value="Brgy Bagacay Road, Sibonga, Cebu">Bagacay</option>
+                <option value="Simala, Cebu">Simala</option>
+                <option value="Pungtod Sibonga, Cebu">Pungtod</option>
+              </optgroup>
+              <optgroup label="Argao">
+                <option value="Guiwanon , Argao, Cebu">Guiwanon</option>
+                <option value="TTaloot - Loon, Argao, Cebu">Taloot</option>
+                <option value="Bulasa, Argao, Cebu">Bulasa</option>
+                <option value="Binlod, Argao, Cebu">Binlod</option>
+                <option value="Langtad, Argao, Cebu">Langtad</option>
+                <option value="Poblacion, Argao, Cebu">Poblacion</option>
+                <option value="Tulic, Argao, Cebu">Tulic</option>
+                <option value="Bogo, Argao, Cebu">Bogo</option>
+                <option value="Talaga, Argao, Cebu">Talaga</option>
+                <option value="Balisong, Argao, Cebu">Balisong</option>
+                <option value="Casay Argao, Cabu">Casay</option>
+              </optgroup>
+              <optgroup label="Dalaguete">
+                <option value="Casay, Dalaguete, Cebu">Casay</option>
+                <option value="Cawayan, Dalaguete, Cebu">Cawayan</option>
+                <option value="Banhigan, Dalaguete, Cebu">Banhigan</option>
+                <option value="Coro, Dalaguete">Coro</option>
+                <option value="Tapon, Dalaguete, Cebu">Tapun</option>
+                <option value="Dalaguete, Cebu">Poblacion</option>
+                <option value="Balud, Poblacion, Dalaguete">Balud</option>
+                <option value="Consolacion , Dalaguete, Cebu">Consolacion</option>
+                <option value="Obong, Dalaguete, Cebu">Obong</option>
+              </optgroup>
+              <optgroup label="Alcoy">
+                <option value="Pugalo, Alcoy, Cebu">Pugalo</option>
+                <option value="Pasol, Alcoy, Cebu">Pasol</option>
+                <option value="Alcoy, Alcoy, Cebu">Poblacion</option>
+                <option value="Atabay, Alcoy, Cebu">Atabay</option>
+                <option value="Guiwang, Alcoy, Cebu">Guiwang</option>
+                <option value="Daan Lungsod, Alcoy, Cebu">Daan Lungsod</option>
+              </optgroup>
+              <optgroup label="Boljoon">
+                <option value="El Pardo, Boljoon, Cebu">El Pardo</option>
+                <option value="Arbor, Boljoon, Cebu">Arbor</option>
+                <option value="Boljoon, Boljoon, Cebu">Poblacion</option>
+                <option value="Granada, Boljoon, Cebu">Granada</option>
+              </optgroup>
+              <optgroup label="Oslob">
+                <option value="Gawi, Cebu">Gawi</option>
+                <option value="Pungtod, Cebu">Pungtod</option>
+                <option value="Nueva Caceres, Oslob, Cebu">Nueva Caceres</option>
+                <option value="Bonbon, Cebu">Bonbon</option>
+                <option value="Looc, Oslob, Cebu">Looc</option>
+                <option value="Lagundi, Oslob, Cebu">Lagundi</option>
+                <option value="Oslob, Oslob, Cebu">Poblacion</option>
+                <option value="Daan Lungsod, Oslob, Cebu">Daang Lungsod</option>
+                <option value="Calumpang, Cebu">Calimpang</option>
+                <option value="Hagdan, Oslob, Cebu">Hagdan</option>
+                <option value="">Alo</option>
+                <option value="Luka, Oslob, Cebu">Luka</option>
+                <option value="Tan-Awan Cangcuay Beach, Oslob, Cebu">Cancuaay</option>
+                <option value="Tan-Awan Cangcuay Beach, Oslob, Cebu">Tan-awan</option>
+                <option value="Bangkugon Oslob, Cebu">Bangkugon</option>
+                <option value="Bangkugon Oslob, Cebu">Mainit</option>
+              </optgroup>
+              <optgroup label="Santander">
+                <option value="Liloan, Santander, Cebu">Liloan</option>
+                <option value="Bato, Santander, Cebu">Bato</option>
+                <option value="Canlumacad, Santander, Cebu">Canlumacad</option>
+                <option value="Colase, Samboan, Cebu">Colase</option>
+                <option value="Dalahikan, Samboan, Cebu">Dalahikan</option>
+                <option value="Tangbo, Samboan, Cebu">Tangbo</option>
+                <option value="Bobon, Santander, Cebu">Bonbon</option>
+                <option value="Poblacion, Santander, Cebu">Poblacion</option>
+                <option value="Suba, Santander, Cebu">Suba</option>
+              </optgroup>
+              <optgroup label="Carcar City to Barili">
+                <option value="Guadalupe, Carcar City, Cebu">Guadalupe</option>
+                <option value="Tan.awan Carcar, Carcar City, Cebu">Tan-awan</option>
+                <option value="Mantalongon, Dalaguete, Cebu">Mantalongon</option>
+              </optgroup>
+              <optgroup label="Barili">
+                <option value="Tubod, Barili, Cebu">Tubod</option>
+                <option value="Giloctog, Barili, Cebu">Giloctog</option>
+                <option value="Patupat, Barili, Cebu">Patupat</option>
+                <option value="Azucena, Carcar, Cebu ">Azucena</option>
+                <option value="Santa Ana , Carcar - Barili Road, Barili, Cebu">Santa Ana</option>
+                <option value="Poblacion, Barili, Cebu">Poblacion</option>
+                <option value="Guibuangan, Barili, Cebu">Guibuangan</option>
+                <option value="Sayaw, Barili, Cebu">Sayaw</option>
+                <option value="Minolos, Barili, Cebu">Minolos</option>
+                <option value="Giawanon Barili, Cebu">Giawanon</option>
+              </optgroup>
+              <optgroup label="Dumanjug">
+                <option value="Bitoon, Dumanjug, Cebu">Bitoon</option>
+                <option value="Tangil, Dumanjug, Cebu">Tangil</option>
+                <option value="Tapon, Dumanjug, Cebu">Tapon</option>
+                <option value="Poblacion, Dumanjug, Cebu">Poblacion</option>
+              </optgroup>
+              <optgroup label="Ronda">
+                <option value="Atabay, Ronda, Cebu">Atabay</option>
+                <option value="Santa Cruz Road, Ronda, Cebu">Santa Cruz</option>
+                <option value="Canduling, Ronda, Cebu">Canduling</option>
+                <option value="Poblacion, Ronda, Cebu">Poblacion</option>
+              </optgroup>
+              <optgroup label="Alcantara">
+                <option value="Palanas, Alcantara, Cebu">Palanas</option>
+                <option value="Poblacion, Alcantara, Cebu">Poblacion</option>
+              </optgroup>
+              <optgroup label="Moalboal">
+                <option value="Tunga, Moalboal, Cebu">Tunga</option>
+                <option value="Poblacion East, Moalboal, Cebu">Poblacion East</option>
+                <option value="Poblacion West, Moalboal, Cebu">Poblacion West</option>
+                <option value="Tomonoy, Moalboal, Cebu">Tomonoy</option>
+                <option value="Balabagon, Moalboal, Cebu">Balabagon</option>
+                <option value="Bugas, Moalboal, Cebu">Bugas</option>
+              </optgroup>
+              <optgroup label="Badian">
+                <option value="Malihao, Santander - Barili - Toledo Road, Badian, Cebu">Malihao</option>
+                <option value="Pantalan, Badian, Cebu">Pantalan</option>
+                <option value="Poblacion, Badian, Cebu">Poblacion</option>
+                <option value="Banhigan, Badian, Cebu">Banhigan</option>
+                <option value="Kawasan, Badian, Cebu">Kawasan</option>
+                <option value="Matutinao, Badian, Cebu">Matutinao</option>
+              </optgroup>
+              <optgroup label="Alegria">
+                <option value="Madridejos, Alegría, Cebu">Madridejos</option>
+                <option value="Sta. Filomena, Alegría, Cebu">Sta. Filomena</option>
+                <option value="Alegria, Cebu">Poblacion</option>
+                <option value="Legaspi, Alegría, Cebu">Legaspi</option>
+              </optgroup>
+              <optgroup label="Malabuyoc">
+                <option value="Montaneza, Malabuyoc, Santander - Barili - Toledo Road, Malabuyoc, Cebu">Montañeza</option>
+                <option value="Malabuyoc, Santander - Barili - Toledo Road, Malabuyoc, Cebu ">Poblacion</option>
+              </optgroup>
+              <optgroup label="Ginatilan">
+                <option value="Lo-oc, Ginatilan, Cebu">Lo-oc</option>
+                <option value="Lutak, Ginatilan, Cebu">Lutak</option>
+                <option value="Ginatilan, Cebu">Poblacion</option>
+              </optgroup>
+              <optgroup label="Samboan">
+                <option value="Ponong, Samboan, Cebu">Ponong</option>
+                <option value="Samboan, Cebu">Poblacion</option>
+                <option value="Bato, Samboan, Cebu">Bato</option>
+              </optgroup>
+            </select>
+          </div>
+    
+            <script>
+              $('.destination-liner').change(function () {
+                var responseID = $(this).val();
+                if (responseID == 'SouthCebu') {
+                  $('#SouthDestinationDetails').removeClass('hidden');
+                  $('#SouthDestinationDetails').addClass('show');
+                } else {
+                  $('#SouthDestinationDetails').removeClass('show');
+                  $('#SouthDestinationDetails').addClass('hidden');
+                }
+              });
+            </script>
+            <label>  Fare: <span id="Input9"> 0.00 PHP</span></label><br>
+            <button  onclick="btnConfirm()" class="btn btn-primary" type="submit" value="Calculate">Proceed to Payment</button>
+          </div>
+        </div>
+      </div>
+     
+  
+  
+      <div id="div2">
+        <section>
+          <div class="book-box">
+            <div class="book-form">
+              <div class="logo-ticket">
+                <img src="images/logo.png">
+              </div>
+              <h3>Summary of Details</h3>
+              <h5>Reference #: <span id="refnum"></span></h5>
+              <h5>Bus Liner : <span id="Input1"></span>
+                <h5>Date Today : <span id="Input2"></span></h5>
+                <h5>Current Time : <span id="Input3"></span></h5>
+                <h5 id="northcebu">North Cebu | Origin : <span id="Input4"></span></h5>
+                <h5 id="northcebudest">North Cebu | Destination: <span id="Input5"></span></h5>
+                <h5 id="southcebu">South Cebu | Origin: <span id="Input6"></span></h5>
+                <h5 id="southcebudest">South Cebu | Destination: <span id="Input7"></span></h5>
+                <h5>Total Kilometers: <span id="Input8"></span></h5>
+                <h1>TOTAL BILL: <span id="Input10"></span></h1>
+              
+            </div>
+          </div>
+        </section>
+      </div>
+    
+      <div id="div3">
+        <section>
+          <div class="book-box">
+            <div class="book-form">
+              <div class="logo-ticket">
+                <img src="images/logo.png">
+              </div>
+              <h1 class="OR-Details">Enter Payment Details</h1><br>
+              <h5 class="paymentdetails">GCASH Account Name :  <input id="gcashname" placeholder="Ex. Will Smith"> <span id="refnum"></span></h5>
+              <h5 class="paymentdetails">GCASH Account Number: <input id="gcashnumber" placeholder="Ex. 09xxxxxxxxxx"><span id="Input1"></span>
+                <h1 class="OR-Details">OR <span id="Input10"></span></h1>
+                <h2 class="scantopay">Scan To Pay Now</h2>
+                <img src="images/gcashimage2.png" alt="Merchant Gcash Image">
+                <br>
+                <h4>Note: </h4>
+                <p>Please present the GCASH receipt and GaBUS receipt to the driver.</p>
+              
+                <button class="btn btn-primary" onclick="show1()">Back</button>
+                <button class="btn btn-primary" onclick="show2()">Confirm</button>  
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="back-top">
+        <a href="ticket.html">
+          <button class="back-top-btn">Go to Top</button>
+        </a>
+      </div>
+   </main>
+   <!-- ----- END MAIN ----------- -->
+   <!---------- footer ---------->
+   <footer class="footer">
+    <div class="foot">
+        <img src="images/logo.png">
+        <h4>GABus <i class="far fa-copyright"></i> 2021</h4>
+        <p>Contact Us at GaBUS@gmail.com / Cebu City, Cebu, 6000</p>
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+    </div>		
+</footer>
+<!---------- end footer ---------->
+    </script>
+  </body>
+</html>
